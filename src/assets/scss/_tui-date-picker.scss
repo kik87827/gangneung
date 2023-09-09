@@ -99,7 +99,7 @@
  
  .tui-calendar .tui-calendar-title-today:hover {
      color: #333;
-     background-color: #f7f5ff;
+     background-color: rgba(62, 97, 228, 0.1);
      cursor: pointer;
  }
  
@@ -117,30 +117,36 @@
  .tui-calendar-btn {
      overflow: hidden;
      position: absolute;
-     top: 0;
-     width: 32px;
-     height: 50px;
-     line-height: 400px;
+     top: 15px;
+     width: 20px;
+     height: 20px;
+     color:transparent;
+     font-size:0;
      z-index: 10;
      cursor: pointer;
      border: none;
      background-color: #fff;
+     background-position: 0 0;
+     background-size:100% auto;
+     background-repeat:no-repeat;
+     &:hover{background-position:0 100%;}
  }
  
  .tui-calendar .tui-calendar-btn-prev-month {
-     left: 0
+     left: 8px; background-image:url("../images/ic_arrow_l_split.png");
+     
  }
  
  .tui-calendar .tui-calendar-btn-next-month {
-     right: 0
+     right: 8px; background-image:url("../images/ic_arrow_r_split.png");
  }
  
  .tui-calendar .tui-calendar-btn-prev-year {
-     left: 0
+     left: 8px; background-image:url("../images/ic_arrow_l_split.png");
  }
  
  .tui-calendar .tui-calendar-btn-next-year {
-     right: 0
+     right: 8px; background-image:url("../images/ic_arrow_r_split.png");
  }
  
  .tui-calendar .tui-calendar-btn-prev-month:after, .tui-calendar .tui-calendar-btn-next-month:after, .tui-calendar .tui-calendar-btn-prev-year:after, .tui-calendar .tui-calendar-btn-next-year:after {
@@ -153,61 +159,66 @@
      content: ''
  }
  
- .tui-calendar .tui-calendar-btn-prev-month:after, .tui-calendar.tui-calendar-month .tui-calendar-btn-prev-year:after {
-     width: 6px;
-     height: 11px;
-     left: 50%;
-     margin-left: -3px;
-     background-position: 0 0
- }
+//  .tui-calendar .tui-calendar-btn-prev-month:after, .tui-calendar.tui-calendar-month .tui-calendar-btn-prev-year:after {
+//      width: 6px;
+//      height: 11px;
+//      left: 50%;
+//      margin-left: -3px;
+//      background-position: 0 0
+//  }
  
- .tui-calendar .tui-calendar-btn-next-month:after, .tui-calendar.tui-calendar-month .tui-calendar-btn-next-year:after {
-     width: 6px;
-     height: 11px;
-     right: 50%;
-     margin-right: -3px;
-     background-position: -8px 0
- }
+//  .tui-calendar .tui-calendar-btn-next-month:after, .tui-calendar.tui-calendar-month .tui-calendar-btn-next-year:after {
+//      width: 6px;
+//      height: 11px;
+//      right: 50%;
+//      margin-right: -3px;
+//      background-position: -8px 0
+//  }
  
- .tui-calendar .tui-calendar-btn-prev-year:after {
-     width: 11px;
-     height: 10px;
-     left: 50%;
-     margin-left: -6px;
-     background-position: -16px -36px
- }
+//  .tui-calendar .tui-calendar-btn-prev-year:after {
+//      width: 11px;
+//      height: 10px;
+//      left: 50%;
+//      margin-left: -6px;
+//      background-position: -16px -36px
+//  }
  
- .tui-calendar .tui-calendar-btn-next-year:after {
-     width: 11px;
-     height: 10px;
-     right: 50%;
-     margin-right: -6px;
-     background-position: -16px -49px
- }
+//  .tui-calendar .tui-calendar-btn-next-year:after {
+//      width: 11px;
+//      height: 10px;
+//      right: 50%;
+//      margin-right: -6px;
+//      background-position: -16px -49px
+//  }
  
  .tui-calendar.tui-calendar-month .tui-calendar-btn-prev-year, .tui-calendar.tui-calendar-month .tui-calendar-btn-next-year {
-     width: 50px
+     width: 20px
  }
  
  .tui-calendar .tui-calendar-has-btns .tui-calendar-btn-prev-year {
-     left: 10px
+     left: 8px
  }
  
  .tui-calendar .tui-calendar-has-btns .tui-calendar-btn-next-year {
-     right: 10px
+     right: 8px
  }
  
  .tui-calendar .tui-calendar-has-btns .tui-calendar-btn-prev-month {
-     left: 44px
+     left: 8px
  }
  
  .tui-calendar .tui-calendar-has-btns .tui-calendar-btn-next-month {
-     right: 44px
+     right: 8px
  }
  
  .tui-calendar .tui-calendar-body-header th {
      color: #777
  }
+ .tui-calendar.tui-calendar-month{
+    .tui-calendar-body{
+        margin:10px auto;
+    }    
+}
  
  .tui-calendar .tui-calendar-body-inner {
      width: 100%;
@@ -285,7 +296,7 @@
  
  .tui-datepicker {
     border-radius: 4px;
-    border: solid 1px #ddd;
+    border: solid 1px $primary;
      background-color: white;
      position: absolute;
      overflow:hidden;
@@ -381,12 +392,12 @@
      position: relative;
      display: inline-block;
      box-sizing: border-box;
-     width: 160px;
-     height: 30px;
+     width: 200px;
+     height: 36px;
      vertical-align: top;
      padding: 0;
     border-radius: 4px;
-    border: solid 1px #ddd;
+    border: solid 1px #d3d5e0;
     background-color: #fff;
  }
  
@@ -399,12 +410,12 @@
  .tui-datepicker-input > input {
      width: 100%;
      height: 100%;
-     padding: 6px 27px 6px 10px;
+     padding: 6px 36px 6px 10px;
      font-size: 12px;
      line-height: 14px;
      vertical-align: top;
      border: 0;
-     color: #5f637a;
+     color: #545760;
      line-height:1;
      position:relative;
      background:transparent; z-index:2;
@@ -414,7 +425,7 @@
  .tui-datepicker-input > .tui-ico-date {
      position: absolute;
      top: 50%;
-     right: 8px;
+     right: 10px;
      transform: translateY(-50%);z-index:0;
  }
  
@@ -436,12 +447,12 @@
  }
  
  .tui-datepicker .tui-is-selectable:hover {
-     background-color: rgba(123, 84, 255, 0.1);
+    background-color: rgba(62, 97, 228, 0.1);
      cursor: pointer;
  }
  
  .tui-datepicker .tui-is-selectable.tui-is-selected, .tui-datepicker.tui-rangepicker .tui-is-selectable.tui-is-selected {
-     background-color: #7b54ff;
+     background-color: $primary;
      color: #fff
  }
  

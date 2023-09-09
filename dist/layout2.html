@@ -17,31 +17,29 @@
 	<title></title>
 </head>
 
-<body class="front_body map_api_body">
+<body class="front_body center_form_body">
 	<div class="page_wrap">
-		<header class="header_wrap">
-			<div class="header_main_cols">
-				<h1 class="header_toplogo">
-					<a href="#" class="header_toplogo_link">
-						<img src="./assets/images/logo_symbol_w70x70@2x.png" class="toplogo_mark" alt="ITS">
-						<img src="./assets/images/logo_txt_w@2x.png" class="toplogo_copy" alt="강릉 ITS 세계총회">
-					</a>
-				</h1>
+		<div class="center_form_page">
+			<div class="cform_content_box_wrap">
+				<div class="cform_content_box">
+					<h1 class="cform_field_title">
+						<div class="title_logo_img01"><img src="./assets/images/logo_symbol_w100x100@2x.png" alt="GANGNEUNG"></div>
+						<div class="title_logo_img02"><img src="./assets/images/logo_txt@2x.png" alt="강릉ITS세계총회"></div>
+					</h1>
+					<div class="cform_field_form">
+						내용이 들어갑니다.
+					</div>
+				</div>
 			</div>
-			<div class="header_sub_cols">
-				<ul class="header_toputil_list">
-					<li><a href="#" class="toputil"><i class="ico_util ico_power"></i><span class="toputil_text">Logout</span></a></li>
-				</ul>
+			<div class="cform_footer_wrap">
+				<p class="cform_footer_para">Copyright © MQNIC CO., LTD</p>
 			</div>
-		</header>
-
+		</div>
 		<script>
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];
 			let url_2 = url !== undefined ? url.split('#')[0] : null;
-			if (url_2 === "loading") {
-				document.querySelector(".loading_layer").classList.add("active");
-			}
+			if (url_2 === "loading") {}
 		</script>
 	</div>
 </body>
