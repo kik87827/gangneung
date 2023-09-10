@@ -4,16 +4,33 @@
 <body class="front_body map_api_body">
 	<div class="page_wrap">
 		@@include('./include/_header.html')
-		
+		<section class="middle_wrap">
+			@@include('./include/_left.html')
+			<div class="middle_right_cols">
+				<div class="pagemap_list_wrap">
+					<ul class="pagemap_list">
+						<li><a href="#" class="ico_pagemap_home"><span class="hdtext">HOME</span></a></li>
+						<li><a href="#" class="pagemap_menu">홈페이지 관리</a></li>
+						<li><a href="#" class="pagemap_menu emp">문의처</a></li>
+					</ul>
+				</div>
+				<div class="middle_right_title_wrap">
+					<h2 class="content_title">문의처</h2>
+				</div>
+				<div class="middle_right_content_wrap">
+					
+				</div>
+			</div>
+		</section>
+		@@include('./include/_footer.html')
+
 		<script>
-			
-			
+			menuRock("#menu03 , #menu03_02");
+
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];
 			let url_2 = url !== undefined ? url.split('#')[0] : null;
-			if(url_2 === "loading"){
-				document.querySelector(".loading_layer").classList.add("active");
-			}
+			
 		</script>
 	</div>
 </body>

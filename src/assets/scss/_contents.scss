@@ -12,6 +12,9 @@
         &:last-child{margin-bottom:0;}
     }
 }
+.btn_textlink{
+    &.type2{}
+}
 .props_item_list{
     display:flex;flex-wrap:wrap;gap:25px;
     > li{}
@@ -107,8 +110,15 @@ input.form_input{
             background-color:#3857ce;border-color:#3857ce;
         }
     }
-    .ico_plus{
-        display:inline-block;position:relative;top:1px;width:16px;height:16px;background:url("../images/ic_plus_s@2x.png") no-repeat 0 0/100% auto; flex:0 0 16px;
+    i{ display:inline-block;position:relative;top:1px;width:16px;height:16px; flex:0 0 16px; background-repeat:no-repeat; background-size:100% auto; background-position: 0 0;}
+    i.ico_plus{
+       background-image:url("../images/ic_plus_s@2x.png")
+    }
+    i.ico_search{
+        background-image:url("../images/ic_search_s@2x.png")
+    }
+    i.ico_check{
+        background-image:url("../images/ic_check@2x.png")
     }
     &.gray{
         background-color:#63677b;border-color:#63677b;
@@ -158,3 +168,242 @@ input.file_origin::file-selector-button {
 .guide_comp_content{
 
 }
+
+
+/* login */
+.cform_field_form{
+    .form_item_wrap{}
+}
+.props_item_list{
+    &.cform_else_list{}
+}
+.btn_cform_submit_wrap{
+
+}
+.btn_cform_submit{}
+.btn_cform_submit_text{}
+.cform_other_data_wrap{}
+.cform_other_row{
+    .btn_textlink{}
+}
+.cform_other_data_list{
+    > li{
+        &:last-of-type{
+            &:after{}
+        }
+        &:after{}
+    }
+}
+.cform_other_data{}
+
+
+/* list */
+.search_field_wrap{}
+.search_field_short_cols{
+    .form_select{}
+}
+.search_field_long_cols{}
+.search_inner_form{
+    input.form_input{}
+    .btn_box{}
+}
+.data_render_wrap{}
+.list_table_top_row{}
+.list_table_top_cols{
+    .btn_box{}
+    &:last-of-type{}
+}
+.count_fraction{}
+.count_fraction_label{}
+.count_fraction_current{}
+.count_fraction_unit{}
+
+.list_table_main_row{}
+.list_table_wrap{}
+.list_table{
+    thead{
+        th{
+            &:last-of-type{}
+        }
+    }
+    tbody{
+        td{
+            &:last-of-type{}
+            &.has_link{}
+            &.has_ico{}
+        }
+    }
+}
+.list_thtext{}
+.list_tdtext{}
+.list_tdlink{}
+.ico_linkitem{
+    &.ico_file{}
+}
+.flag_text{}
+.flag_ico{
+    &.type2{}
+}
+
+.pagination_wrap{display:flex;justify-content: flex-end;}
+.btn_pagination_control{
+    display:flex;width:24px;height:24px; align-items: center; justify-content: center;
+    &:after{
+        display:block;content:'';width:16px;height:16px;background:url("../images/ic_arrow_dgr@2x.png") no-repeat 0 0/100% auto;
+    }
+    &:focus{}
+    &:hover{
+        &:after{background-position:0 100%;}
+    }
+    &.disabled{opacity:.3; cursor: default;
+        &:after{background-position:0 0 !important;}
+    }
+    &.prev_go{
+        &:after{transform: rotate(180deg);}
+    }
+    &.next_go{}
+    &.prev_go2{
+    }
+    &.next_go2{}
+}
+.pagination_number_list{
+    display:flex;justify-content: flex-end;
+    > li{
+        &:last-of-type{}
+    }
+}
+.page_number{
+    display:flex;align-items:center;height:24px;min-width:24px;white-space: nowrap;justify-content: center;
+    font-size: 13px;
+  color: #5f637a;
+    &:hover,
+    &.active{color:$primary;font-weight:700;}
+}
+
+.form_view_table_wrap{}
+.form_view_table{
+    th,
+    td{}
+    th{}
+    td{
+        &.colspan_td{
+
+        }
+    }
+    .form_input{}
+    tr{
+        &.active{display:table-row;}
+    }
+}
+.form_view_label{}
+.props_item_list_wrap{
+    .props_item_list{}
+    .props_item{}
+}
+.file_upload_zone{}
+.file_upload_btn_row{
+    .file_upload_item{}
+}
+.file_placeholder{}
+.file_upload_data_row{}
+.upload_data_text_list{
+    > li{
+        .upload_data_text_item{}
+    }
+}
+.upload_data_text_item{}
+.upload_data_text{}
+.btn_upload_del{}
+
+.file_upload_imgdata_row{}
+.upload_title_row{}
+.upload_title{}
+.upload_data_row{}
+.upload_data_list{
+    > li{
+        &:last-of-type{}
+    }
+}
+.upload_data_list_wrap{
+    .upload_data_list{
+        
+    }
+}
+.upload_data{}
+.upload_data_chk_cols{
+    .props_form{}
+}
+.upload_data_render_cols{}
+.upload_data_render_item{
+    .btn_upload_del{}
+}
+.udr_thum{
+    img{}
+}
+.udr_spec{}
+
+.upload_data_text_list{
+    > li{
+        &:last-of-type{}
+    }
+}
+.upload_data_text_item{}
+a.upload_data_text_item{}
+.upload_datalink_ico{}
+.upload_data_text{}
+.btn_upload_del{}
+.getdata_render_wrap{}
+
+.td_block_wrap{}
+.td_block{
+    &:last-of-type{}
+    .props_item_list_wrap{}
+}
+
+.td_cont{
+    &.active{}
+    .file_upload_zone{
+
+    }
+}
+
+.block_table{}
+.block_table_tr{}
+.block_table_th{}
+.block_table_td{
+    input.form_input{}
+}
+.block_tb_label{}
+
+.gallery_list_wrap{}
+.gallery_list{
+    > li{}
+}
+.gallery_item{}
+.gallery_thum{
+    > img{}
+}
+.gallery_spec{}
+.gallery_spec_title{}
+.gallery_spec_else_g{}
+.gs_else_item{}
+.gs_else_item:last-of-type{}
+.gs_else_text{}
+.gs_else_ico{
+    &.ico_eye{}
+}
+
+.upload_img_wrap{}
+.upload_img{
+    > img{}
+}
+
+.flex_form_wrap{}
+.flex_form_long{}
+.flex_form_short{}
+.inline_form_wrap{}
+.inline_form_cols{
+    &:last-of-type{}
+    .tui-datepicker-input-wrap{}
+}
+.inline_form_else{}
