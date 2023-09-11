@@ -67,6 +67,8 @@ input.form_input{
 
     &:focus{border-color:$primary;}
     &.focus{color:$primary}
+
+    &.small{height:30px;}
 }
 
 .btn_submit_row{margin-top:20px;text-align: center;display:flex;align-items:center;justify-content: center;gap:8px;}
@@ -198,7 +200,9 @@ input.file_origin::file-selector-button {
 
 
 /* list */
-.search_field_wrap{}
+.search_field_wrap{
+    &.type2{}
+}
 .search_field_short_cols{
     .form_select{}
 }
@@ -207,6 +211,23 @@ input.file_origin::file-selector-button {
     input.form_input{}
     .btn_box{}
 }
+.search_field_cols{
+    &:last-of-type{}
+}
+.search_field_form_group{
+    &:last-of-type{}
+}
+.search_field_label_cols{}
+.sf_label{}
+.search_field_form_cols{
+    .tui-datepicker-input-wrap{}
+}
+.form_inline_group{}
+.form_inline_cols{
+    &:last-of-type{}
+    .btn_box{}
+}
+
 .data_render_wrap{}
 .list_table_top_row{}
 .list_table_top_cols{
@@ -407,3 +428,37 @@ a.upload_data_text_item{}
     .tui-datepicker-input-wrap{}
 }
 .inline_form_else{}
+
+
+.detail_render_item_wrap{}
+.detail_render_item{
+    &:last-of-type{}
+}
+.detail_render_title{}
+.detail_render_content{}
+.dr_img_cols{
+    > img{}
+}
+.dr_spec_cols{}
+.dr_spec_table{
+    th,td{}
+    th{}
+    td{
+        input.form_input{}
+    }
+}
+.dr_spec_label{}
+.dr_spec_value{}
+
+
+.block_section_wrap{}
+.block_section{
+    &:last-of-type{}
+}
+.block_section_title{}
+.block_section_content{}
+.block_depth_section{
+    &:last-of-type{}
+}
+.block_depth_title{}
+.block_depth_content{}

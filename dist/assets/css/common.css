@@ -2797,6 +2797,9 @@ input.form_input:focus {
 input.form_input.focus {
   color: #3e61e4;
 }
+input.form_input.small {
+  height: 30px;
+}
 
 .btn_submit_row {
   margin-top: 20px;
