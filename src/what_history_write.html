@@ -36,7 +36,7 @@
 											<ul class="props_item_list">
 												<li>
 													<div class="props_item">
-														<input type="radio" id="lang_01" name="lang" class="props_form">
+														<input type="radio" id="lang_01" name="lang" class="props_form" checked>
 														<label for="lang_01" class="props_label">한국어</label>
 													</div>
 												</li>
@@ -86,7 +86,7 @@
 												</div>
 												<p class="file_placeholder">.jpg/.png, 10MB 이하 이미지만 업로드 가능합니다. 이미지 첨부는 최대 5개까지 가능합니다.</p>
 											</div>
-											<div class="file_upload_imgdata_row">
+											<div class="file_upload_data_row file_upload_imgdata_row">
 												<div class="upload_title_row">
 													<p class="upload_title">썸네일 이미지를 선택하세요.</p>
 													<a href="#" class="btn_textlink type2">선택삭제</a>
@@ -194,7 +194,7 @@
 								<tr>
 									<td colspan="2" class="colspan_td">
 										<div class="editor_insert_wrap">
-											<div style="background:#ddd;display:flex;align-items:center;justify-content:center;min-height:200px;color:#000;">
+											<div style="background:#ddd;display:flex;align-items:center;justify-content:center;min-height:300px;color:#000;">
 												EDITOR
 											</div>
 										</div>
@@ -214,6 +214,17 @@
 
 		<script>
 			menuRock("#menu01 , #menu01_01");
+
+			// file upload
+			const file_upload_zone = document.querySelectorAll(".file_upload_zone");
+			if(!!file_upload_zone){
+				file_upload_zone.forEach((item)=>{
+					const file_upload_item = item.querySelector(".file_origin");
+					file_upload_item.addEventListener("change",()=>{
+						item.querySelector(".file_upload_data_row").style.display = "block";
+					});
+				});
+			}
 
 			var datepicker = new tui.DatePicker('#map_date_render', {
 				date: new Date(),

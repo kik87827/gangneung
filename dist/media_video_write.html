@@ -108,7 +108,7 @@
 											<ul class="props_item_list">
 												<li>
 													<div class="props_item">
-														<input type="radio" id="lang_01" name="lang" class="props_form">
+														<input type="radio" id="lang_01" name="lang" class="props_form" checked>
 														<label for="lang_01" class="props_label">한국어</label>
 													</div>
 												</li>
@@ -125,13 +125,13 @@
 								<tr>
 									<th scope="row"><span class="form_view_label">동영상 유형</span></th>
 									<td>
-										<div class="td_block_wrap">
+										<div class="td_block_wrap" id="props_tab_wrap">
 											<div class="td_block">
 												<div class="props_item_list_wrap">
 													<ul class="props_item_list">
 														<li>
 															<div class="props_item">
-																<input type="radio" id="type_01" name="type" class="props_form" data-target="#type_01_cont">
+																<input type="radio" id="type_01" name="type" class="props_form" data-target="#type_01_cont" checked>
 																<label for="type_01" class="props_label">URL 첨부</label>
 															</div>
 														</li>
@@ -196,6 +196,38 @@
 		<script>
 			menuRock("#menu02 , #menu02_02");
 
+			propsTab();
+
+			function propsTab() {
+				const props_tab_wrap = document.querySelector("#props_tab_wrap");
+				const props_tab_cont = props_tab_wrap.querySelectorAll(".td_cont");
+				const props_tab = props_tab_wrap.querySelectorAll("[data-target]");
+				props_tab.forEach((item) => {
+					item.addEventListener("click", (e) => {
+						const thisItem = e.currentTarget;
+						const thisTarget = document.querySelector(thisItem.dataset.target);
+						if (!!thisTarget) {
+							props_tab_cont.forEach((item) => {
+								item.classList.remove("active");
+							})
+							if (item.checked) {
+								thisTarget.classList.add("active");
+							}
+						}
+					});
+				})
+			}
+
+			// file upload
+			const file_upload_zone = document.querySelectorAll(".file_upload_zone");
+			if (!!file_upload_zone) {
+				file_upload_zone.forEach((item) => {
+					const file_upload_item = item.querySelector(".file_origin");
+					file_upload_item.addEventListener("change", () => {
+						item.querySelector(".file_upload_data_row").style.display = "block";
+					});
+				});
+			}
 
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];

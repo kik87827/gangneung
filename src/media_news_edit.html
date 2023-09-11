@@ -62,7 +62,7 @@
 												</div>
 												<p class="file_placeholder">.jpg/.png, 10MB 이하 이미지만 업로드 가능합니다. 파일 첨부는 최대 1개까지 가능합니다.</p>
 											</div>
-											<div class="file_upload_imgdata_row">
+											<div class="file_upload_data_row file_upload_imgdata_row" style="display:block">
 												<div class="upload_data_row">
 													<ul class="upload_data_list">
 														<li>
@@ -71,9 +71,9 @@
 																	<div class="upload_data_render_item">
 																		<div class="udr_thum"><img src="./assets/images/img_280x200_01.png" alt=""></div>
 																		<div class="udr_spec">check.png</div>
-																		<button type="button" class="btn_upload_del"></button>
 																	</div>
 																</div>
+																<button type="button" class="btn_upload_data_delete"></button>
 															</div>
 														</li>
 													</ul>
@@ -94,7 +94,7 @@
 												</div>
 												<p class="file_placeholder">*pdf, *ppt, *pptx, 파일 첨부는 최대 3개까지 가능합니다.</p>
 											</div>
-											<div class="file_upload_data_row">
+											<div class="file_upload_data_row" style="display:block">
 												<ul class="upload_data_text_list">
 													<li>
 														<div class="upload_data_text_item">
@@ -110,7 +110,7 @@
 								<tr>
 									<td colspan="2" class="colspan_td">
 										<div class="editor_insert_wrap">
-											<div style="background:#ddd;display:flex;align-items:center;justify-content:center;min-height:200px;color:#000;">
+											<div style="background:#ddd;display:flex;align-items:center;justify-content:center;min-height:300px;color:#000;">
 												EDITOR
 											</div>
 										</div>
@@ -130,6 +130,17 @@
 
 		<script>
 			menuRock("#menu02 , #menu02_01");
+		
+			// file upload
+			const file_upload_zone = document.querySelectorAll(".file_upload_zone");
+			if(!!file_upload_zone){
+				file_upload_zone.forEach((item)=>{
+					const file_upload_item = item.querySelector(".file_origin");
+					file_upload_item.addEventListener("change",()=>{
+						item.querySelector(".file_upload_data_row").style.display = "block";
+					});
+				});
+			}
 
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];

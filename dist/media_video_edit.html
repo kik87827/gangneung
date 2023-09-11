@@ -125,7 +125,7 @@
 								<tr>
 									<th scope="row"><span class="form_view_label">동영상 유형</span></th>
 									<td>
-										<div class="td_block_wrap">
+										<div class="td_block_wrap" id="props_tab_wrap">
 											<div class="td_block">
 												<div class="props_item_list_wrap">
 													<ul class="props_item_list">
@@ -163,7 +163,7 @@
 															</div>
 															<p class="file_placeholder">*mp4, *avi, 1GB 이하 파일만 업로드 가능 파일 첨부는 최대 1개까지 가능합니다</p>
 														</div>
-														<div class="file_upload_data_row">
+														<div class="file_upload_data_row" style="display:block">
 															<ul class="upload_data_text_list">
 																<li>
 																	<div class="upload_data_text_item">
@@ -195,6 +195,39 @@
 
 		<script>
 			menuRock("#menu02 , #menu02_02");
+
+			propsTab();
+
+			function propsTab() {
+				const props_tab_wrap = document.querySelector("#props_tab_wrap");
+				const props_tab_cont = props_tab_wrap.querySelectorAll(".td_cont");
+				const props_tab = props_tab_wrap.querySelectorAll("[data-target]");
+				props_tab.forEach((item) => {
+					item.addEventListener("click", (e) => {
+						const thisItem = e.currentTarget;
+						const thisTarget = document.querySelector(thisItem.dataset.target);
+						if (!!thisTarget) {
+							props_tab_cont.forEach((item) => {
+								item.classList.remove("active");
+							})
+							if (item.checked) {
+								thisTarget.classList.add("active");
+							}
+						}
+					});
+				})
+			}
+
+			// file upload
+			const file_upload_zone = document.querySelectorAll(".file_upload_zone");
+			if (!!file_upload_zone) {
+				file_upload_zone.forEach((item) => {
+					const file_upload_item = item.querySelector(".file_origin");
+					file_upload_item.addEventListener("change", () => {
+						item.querySelector(".file_upload_data_row").style.display = "block";
+					});
+				});
+			}
 
 
 			// 퍼블확인용
