@@ -3590,6 +3590,8 @@ a.upload_data_text_item:hover .upload_datalink_ico {
   font-size: 13px;
   color: #545760;
   padding: 20px;
+  box-sizing: border-box;
+  min-height: 260px;
   line-height: 1.54;
   text-align: left;
 }
@@ -3605,6 +3607,20 @@ a.upload_data_text_item:hover .upload_datalink_ico {
 }
 .td_cont .file_upload_zone {
   padding: 2px 0;
+}
+
+.tab_cont {
+  display: none;
+}
+.tab_cont.active {
+  display: block;
+}
+
+tr.tab_cont {
+  display: none;
+}
+tr.tab_cont.active {
+  display: table-row;
 }
 
 .block_table {
@@ -3730,6 +3746,12 @@ a.upload_data_text_item:hover .upload_datalink_ico {
 .upload_img_wrap {
   padding: 6px 0;
 }
+.upload_img_wrap.type2 {
+  text-align: center;
+}
+.upload_img_wrap.type2 .upload_img > img {
+  max-width: 400px;
+}
 
 .upload_img {
   min-width: 140px;
@@ -3747,6 +3769,28 @@ a.upload_data_text_item:hover .upload_datalink_ico {
 
 .editor_insert_wrap {
   padding: 20px;
+}
+
+.flex_form_wrap {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.flex_form_long {
+  flex: 1;
+  min-width: 0;
+}
+
+.inline_form_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.inline_form_else {
+  padding: 0 10px;
+  font-size: 13px;
+  color: #63677b;
 }
 
 .guide_page {

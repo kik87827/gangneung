@@ -126,7 +126,7 @@
 									<th scope="row"><span class="form_view_label">URL</span></th>
 									<td>
 										<div class="flex_form_wrap">
-											<div class="flex_form_long"><input type="text" placeholder="URL" value="URL.com"></div>
+											<div class="flex_form_long"><input type="text" placeholder="URL" class="form_input" value="URL.com"></div>
 											<div class="flex_form_short">
 												<div class="props_item">
 													<input type="checkbox" id="url_form" class="props_form">
@@ -140,7 +140,7 @@
 									<th scope="row"><span class="form_view_label">게시기간</span></th>
 									<td>
 										<div class="flex_form_wrap">
-											<div class="flex_form_long">
+											<div class="flex_form_cols">
 												<div class="inline_form_wrap">
 													<div class="inline_form_cols">
 														<div class="tui-datepicker-input-wrap">
@@ -163,7 +163,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="flex_form_short">
+											<div class="flex_form_cols">
 												<div class="props_item">
 													<input type="checkbox" id="show_is" class="props_form">
 													<label for="show_is" class="props_label">게시 여부</label>
@@ -175,7 +175,7 @@
 								<tr>
 									<th scope="row"><span class="form_view_label">팝업 형식</span></th>
 									<td>
-										<div class="td_block_wrap">
+										<div class="td_block_wrap" id="props_tab_wrap">
 											<div class="td_block">
 												<div class="props_item_list_wrap">
 													<ul class="props_item_list">
@@ -195,7 +195,7 @@
 												</div>
 											</div>
 											<div class="td_block">
-												<div class="td_cont active" id="type_01_cont">
+												<div class="td_cont tab_cont active" id="type_01_cont">
 													<div class="file_upload_zone">
 														<div class="file_upload_btn_row">
 															<div class="file_upload_item">
@@ -221,7 +221,7 @@
 										</div>
 									</td>
 								</tr>
-								<tr id="type_02_cont">
+								<tr id="type_02_cont" class="tab_cont">
 									<td colspan="2" class="colspan_td">
 										<div class="editor_insert_wrap">
 											<div style="background:#ddd;display:flex;align-items:center;justify-content:center;min-height:300px;color:#000;">
@@ -264,6 +264,40 @@
 					format: 'yyyy-MM-dd'
 				}
 			});
+
+
+			propsTab();
+
+			function propsTab() {
+				const props_tab_wrap = document.querySelector("#props_tab_wrap");
+				const props_tab_cont = document.querySelectorAll(".tab_cont");
+				const props_tab = props_tab_wrap.querySelectorAll("[data-target]");
+				props_tab.forEach((item) => {
+					item.addEventListener("click", (e) => {
+						const thisItem = e.currentTarget;
+						const thisTarget = document.querySelector(thisItem.dataset.target);
+						if (!!thisTarget) {
+							props_tab_cont.forEach((item) => {
+								item.classList.remove("active");
+							})
+							if (item.checked) {
+								thisTarget.classList.add("active");
+							}
+						}
+					});
+				})
+			}
+
+			// file upload
+			const file_upload_zone = document.querySelectorAll(".file_upload_zone");
+			if (!!file_upload_zone) {
+				file_upload_zone.forEach((item) => {
+					const file_upload_item = item.querySelector(".file_origin");
+					file_upload_item.addEventListener("change", () => {
+						item.querySelector(".file_upload_data_row").style.display = "block";
+					});
+				});
+			}
 
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];
