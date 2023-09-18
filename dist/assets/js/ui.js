@@ -366,6 +366,13 @@ function formItemFunc() {
       thisTarget.classList.remove("focus");
     }, 10);
   });
+  let currentScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    if (currentScrollY !== window.scrollY) {
+      selectReset();
+    }
+    currentScrollY = window.scrollY
+  });
   document.querySelector("body").addEventListener("click", (e) => {
     if (e.target.classList.contains("form_select")) {
       return;
