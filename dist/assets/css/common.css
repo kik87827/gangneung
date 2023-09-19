@@ -375,7 +375,7 @@ html.smooth {
 
 .tui-calendar .tui-calendar-title-today:hover {
   color: #333;
-  background-color: rgba(62, 97, 228, 0.1);
+  background-color: rgba(10, 122, 84, 0.1);
   cursor: pointer;
 }
 
@@ -696,7 +696,7 @@ html.smooth {
 }
 
 .tui-datepicker .tui-is-selectable:hover {
-  background-color: rgba(62, 97, 228, 0.1);
+  background-color: rgba(10, 122, 84, 0.1);
   cursor: pointer;
 }
 
@@ -2157,7 +2157,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   font-size: 13px;
   line-height: 1;
   text-align: center;
-  color: #c8d0ed;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 1440px) {
@@ -2880,8 +2880,8 @@ input.form_input.small {
   font-weight: 600;
 }
 .btn_box.primary:hover {
-  background-color: #3857ce;
-  border-color: #3857ce;
+  background-color: #019370;
+  border-color: #019370;
 }
 .btn_box i {
   display: inline-block;
@@ -2951,11 +2951,11 @@ select.form_select.focus {
   cursor: pointer;
   padding: 8px 10px;
   border-radius: 4px;
-  background-color: #3e61e4;
+  background-color: #01a37c;
 }
 .file_upload_item:hover {
-  background-color: #3857ce;
-  border-color: #3857ce;
+  background-color: #019370;
+  border-color: #019370;
 }
 
 .file_upload_ico {
@@ -3040,7 +3040,6 @@ input.file_origin::file-selector-button {
   border-radius: 8px;
   transition: 0.4s box-shadow;
   overflow: hidden;
-  box-shadow: 0 3px 8px 0 rgba(71, 88, 255, 0);
 }
 .btn_cform_submit:before, .btn_cform_submit:after {
   display: block;
@@ -3054,15 +3053,15 @@ input.file_origin::file-selector-button {
   border-radius: 8px;
 }
 .btn_cform_submit:after {
-  background-image: linear-gradient(to bottom, #3e61e4 0%, #579aff 100%);
+  background-image: linear-gradient(to bottom, #01a37c 0%, #14bb83 100%);
   opacity: 0;
 }
 .btn_cform_submit:before {
-  background-image: linear-gradient(to bottom, #579aff 0%, #3e61e4 100%);
+  background-image: linear-gradient(to bottom, #14bb83 0%, #01a37c 100%);
   opacity: 1;
 }
 .btn_cform_submit:hover {
-  box-shadow: 0 3px 8px 0 rgba(71, 88, 255, 0.5);
+  box-shadow: 0 3px 8px 0 rgba(54, 147, 116, 0.5);
 }
 .btn_cform_submit:hover:before, .btn_cform_submit:hover:after {
   opacity: 1;
@@ -3238,6 +3237,9 @@ input.file_origin::file-selector-button {
 .list_table tbody tr:hover td {
   background-color: #f9fafd;
 }
+.list_table tbody tr:hover .ico_linkitem {
+  background-position: 0 100%;
+}
 .list_table tbody td {
   border-bottom: 1px solid #f1f2f4;
   padding: 12px 8px;
@@ -3316,7 +3318,7 @@ input.file_origin::file-selector-button {
   font-size: 12px;
   font-weight: 500;
   text-align: center;
-  color: #4698ff;
+  color: #198d66;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -3324,7 +3326,7 @@ input.file_origin::file-selector-button {
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 100%;
-  background-color: #e5f1ff;
+  background-color: #e8f8e8;
 }
 .flag_ico.type2 {
   background-color: #f1f3f9;
@@ -3580,9 +3582,9 @@ input.file_origin::file-selector-button {
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  height: 0;
-  padding-bottom: 100%;
+  height: 140px;
   background: #f0f0f0;
+  width: 140px;
 }
 .udr_thum > img {
   display: block;
@@ -3632,7 +3634,7 @@ a.upload_data_text_item:hover .upload_datalink_ico {
   display: block;
   position: absolute;
   top: -7px;
-  right: -7px;
+  left: 127px;
   background: url("../images/ic_img_del@2x.png") no-repeat 0 0/100% auto;
   height: 24px;
 }
