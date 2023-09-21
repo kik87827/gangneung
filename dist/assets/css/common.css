@@ -3576,8 +3576,7 @@ input.file_origin::file-selector-button {
   padding-top: 5px;
 }
 .upload_data_render_cols {
-  flex: 1;
-  width: 140px;
+  flex: 1; /* width:140px; */
   position: relative;
 }
 
